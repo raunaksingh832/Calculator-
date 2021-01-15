@@ -1,4 +1,6 @@
 from tkinter import *
+from math import sqrt
+from math import sin
 # expression to access among all the functions
 expression = ""
 # functions
@@ -31,6 +33,22 @@ def evaluate(equation):
     except:
         expression = ""
         pass
+def squareroot(a):
+    global expression
+    try :
+        r = str(sqrt(eval(expression)))
+        a.set(r)
+        expression = ""
+    except:
+        expression = ""
+def sinx(y):
+    global expression 
+    try :
+       r1 = str(sin(eval(expression)))
+       y.set(r1)
+       expression = ""
+    except:
+        expression = "" 
 # creating the GUI
 def main():
 
@@ -82,6 +100,10 @@ def main():
     equal.grid(row=5, column=2)
     clear = Button(window, text='Clear', fg='red', bg='white', bd=0, command=lambda: clear_input_field(equation), height=2, width=7)
     clear.grid(row=5, column=1)
+    x = Button(window,text='√',fg='red',bg='white',bd=0,command=lambda: squareroot(equation),width=7)
+    x.grid(row=5,column=4)
+    sinbutton = Button(window,text='sin()',fg = 'red',bg='white',bd=0,command = lambda: sinx(equation),width=7)
+    sinbutton.grid(row=4,column=4)
     Message = Label(window,text='A CALCULATOR MADE BY RAUNAK SINGH',font=('Arial',20))
     Message.grid(row=15,column=1)
     # showing the GUI
