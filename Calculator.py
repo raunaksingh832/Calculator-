@@ -1,6 +1,12 @@
+'''This is a calculator made by Raunak Singh '''
+'''A student who studies in class 8 ''' 
+#email - raunak.priya.dinkar@gmail.com
+#Github - raunaksingh832
 from tkinter import *
 from math import sqrt
 from math import sin
+from math import radians
+import math 
 # expression to access among all the functions
 expression = ""
 # functions
@@ -44,9 +50,10 @@ def squareroot(a):
 def sinx(y):
     global expression 
     try :
-       r1 = str(sin(eval(expression)))
-       y.set(r1)
-       expression = ""
+        r1 = str(sin((math.pi)*(1/180) * eval(expression)))
+        y.set(r1)
+        print(r1)
+        expression = ""
     except:
         expression = "" 
 # creating the GUI
